@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1
+        {
+            background-color: brown;
+            color: aqua;
+        }
+        body
+        {
+            background-color: rgb(167, 167, 229);
+        }
+        tr
+        {
+            color: purple;
+        }
+        table
+        {
+            background-color: cadetblue;
+            border-radius: 3%;
+            border-color: rgb(1, 28, 28);
+            border-style:dashed;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>selfjoins</h1>
+        <table border="3px">
+            <tr>
+                <th>Emp number </th>
+                <th>Emp name</th>
+                <th>Manager name</th>
+                <th>Salary</th>
+                <th>Commssion</th>
+                <th>job</th>
+            </tr>
+
+            {% for emo in empmgrobjects %}
+                <tr>
+                    <th>{{emo.empno}}</th>
+                    <th>{{emo.ename}}</th>
+                    <th>{{emo.mgr.ename}}</th>
+                    <th>{{emo.sal}}</th>
+                    <th>{{emo.comm}}</th>
+                    <th>{{emo.job}}</th>
+                </tr>
+            {% endfor %}
+
+        </table>
+    </center>
+</body>
+</html>
